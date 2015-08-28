@@ -1,0 +1,22 @@
+PODS:
+  - KVOController (1.0.3)
+  - WebViewJavascriptBridge (4.1.4)
+
+DEPENDENCIES:
+  - KVOController
+  - WebViewJavascriptBridge (from `https://github.com/marcuswestin/WebViewJavascriptBridge`)
+
+EXTERNAL SOURCES:
+  WebViewJavascriptBridge:
+    :git: https://github.com/marcuswestin/WebViewJavascriptBridge
+
+CHECKOUT OPTIONS:
+  WebViewJavascriptBridge:
+    :commit: 7cfecec974e52f7e575fce10a4f274c9d71183d1
+    :git: https://github.com/marcuswestin/WebViewJavascriptBridge
+
+SPEC CHECKSUMS:
+  KVOController: 9fd8f0343670994e4b6f9f0b31f5a45663f3e1cf
+  WebViewJavascriptBridge: f10ac16f2cd3adf2b941bd79477c55a8f6e01044
+
+COCOAPODS: 0.37.2

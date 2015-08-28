@@ -1,0 +1,15 @@
+<<!DOCTYPE html>
+<html>
+    <head>
+        <title>GQL</title>
+        <script type="text/javascript" src="browser.min.js"></script> <!-- allows us to use babel es6 in text/babel type tags -->
+        <script type="text/javascript" src="bundle.js"></script> <!-- the graphql-js browserified bundle -->
+        <script type="text/babel" src="gql_bridge.js"></script>  <!-- the obj-c bridge utilities -->
+
+        @@SCHEMA_SCRIPT_INCLUDES@@
+
+    </head>
+    <body>
+        check console
+    </body>
+</html>
