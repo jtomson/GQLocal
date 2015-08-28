@@ -80,7 +80,7 @@ GQLocal *gqlocal = [[GQLocal alloc] init];
 // bind any 'resolve' callbacks defined in the js here
 [gqlocal bindJSResolver:@"getHero" resolver:^(NSDictionary *root, NSArray *args, void (^callback)(id)) {
         dispatch_async(queue, ^{ callback([StarWarsData hero:args[0]]); });
-    }];
+}];
  
 [gqlocal bindJSResolver:@"getFriends" resolver:^(NSDictionary *root, NSArray *args, void (^callback)(id)) {
     dispatch_async(queue, ^{ callback([StarWarsData friends:args[0]]); });
