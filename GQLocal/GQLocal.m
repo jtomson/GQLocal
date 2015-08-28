@@ -96,22 +96,11 @@ typedef void(^ResolverBlock)(NSDictionary *, NSArray *, void (^)(id));
 }
 
 - (void)query:(NSString*)graphQL schema:(NSString *)schemaName response:(void(^)(NSDictionary *, NSError *))callback {
-    
-    // send the query over the bridge, call the passed callback when complete
-    NSMutableString *jsString = [NSMutableString string];
-    for (NSString *schemaName in self.schemaDict.allKeys) {
-        [jsString appendString:[NSString stringWithFormat:@"window.gql.schemas['%@'] && ", schemaName]];
-    }
-    [jsString appendString:@"true"]; // for final &&
-    NSString *result = [self.webView stringByEvaluatingJavaScriptFromString:jsString];
-    if ([result isEqualToString:@"true"]) {
-        // UIWebView object has fully loaded.
-        self.isReady = YES;
-    }
-    
+   
     // Time the query
     NSDate *startTime = [NSDate date];
     
+    // send the query over the bridge, call the passed callback when complete
     [self.bridge send:@{ @"query": graphQL, @"schemaName":schemaName} responseCallback:^(id responseData) {
         NSDictionary *response = responseData;
         
